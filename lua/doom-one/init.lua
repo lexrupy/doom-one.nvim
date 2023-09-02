@@ -472,7 +472,7 @@ doom_one.set_colorscheme = function()
   end
 
   if config.plugins.whichkey then
-    set_hl("WhichKeyGroup", { fg = palette.blue, bold = true })
+    set_hl("WhichKeyGroup", { bold = true })
   end
 
   if config.plugins.barbar then
