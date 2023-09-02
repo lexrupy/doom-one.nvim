@@ -471,10 +471,6 @@ doom_one.set_colorscheme = function()
     set_hl("illuminatedWord", { underline = true })
   end
 
-  if config.plugins.whichkey then
-    set_hl("WhichKeyGroup", { bold = true })
-  end
-
   if config.plugins.barbar then
     set_hl("BufferCurrent", { bg = "bg", fg = dark_theme and palette.base8 or palette.base0 })
     set_hl("BufferCurrentIndex", { bg = "bg", fg = palette.base6 })
@@ -555,9 +551,9 @@ doom_one.set_colorscheme = function()
   end
 
   if config.plugins.whichkey then
-    set_hl("WhichKey", { fg = dark_theme and palette.blue or palette.red })
-    set_hl("WhichKeyGroup", { fg = palette.magenta })
-    set_hl("WhichKeyDesc", { fg = palette.magenta })
+    set_hl("WhichKey", { fg = palette.green })
+    set_hl("WhichKeyGroup", { fg = palette.violet })
+    set_hl("WhichKeyDesc", { fg = palette.blue })
     set_hl("WhichKeySeparator", { link = "Separator" })
     set_hl("WhichKeyFloat", { fg = dark_theme and palette.base2 or palette.base6 })
     set_hl("WhichKeyValue", { fg = palette.grey })
