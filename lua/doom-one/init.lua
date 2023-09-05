@@ -199,13 +199,15 @@ doom_one.set_colorscheme = function()
   set_hl("Exception", { fg = dark_theme and palette.blue or palette.red })
   set_hl("Conditional", { fg = dark_theme and palette.blue or palette.red })
 
-  set_hl("Variable", { fg = utils.darken(palette.magenta, 0.36) })
-  set_hl("VariableBuiltin", { fg = palette.magenta, bold = true })
-  set_hl("Constant", { fg = palette.violet, bold = true })
+  -- set_hl("Variable", { fg = utils.darken(palette.magenta, 0.36) })
+  -- set_hl("Variable", { fg = utils.lighten(palette.violet, 0.15) })
+  set_hl("Variable", { fg = palette.fg })
+  set_hl("VariableBuiltin", { fg = palette.blue, bold = true })
+  set_hl("Constant", { fg = palette.magenta, bold = false })
 
-  set_hl("Number", { fg = palette.violet })
+  set_hl("Number", { fg = palette.purple })
   set_hl("Float", { link = "Number" })
-  set_hl("Boolean", { fg = palette.magenta, bold = true })
+  set_hl("Boolean", { fg = palette.blue, bold = true })
   set_hl("Enum", { fg = palette.orange })
 
   set_hl("Character", { fg = palette.violet, bold = true })
@@ -219,14 +221,15 @@ doom_one.set_colorscheme = function()
   set_hl("Special", { fg = palette.violet })
   set_hl("SpecialBold", { fg = palette.violet, bold = true })
 
-  set_hl("Field", { fg = palette.violet })
+  set_hl("Field", { fg = palette.purple })
   set_hl(
     "Argument",
     { fg = dark_theme and utils.lighten(palette.magenta, 0.4) or utils.darken(palette.magenta, 0.36) }
   )
   set_hl(
     "Attribute",
-    { fg = dark_theme and utils.lighten(palette.magenta, 0.4) or utils.darken(palette.magenta, 0.36) }
+    -- { fg = dark_theme and utils.lighten(palette.magenta, 0.4) or utils.darken(palette.magenta, 0.36) }
+    { fg = dark_theme and palette.blue, bold = true }
   )
   set_hl(
     "Identifier",
@@ -235,15 +238,15 @@ doom_one.set_colorscheme = function()
   set_hl("Property", { fg = palette.magenta })
   set_hl("Function", { fg = palette.magenta })
   set_hl("FunctionBuiltin", {
-    fg = dark_theme and utils.lighten(palette.magenta, 0.4) or utils.darken(palette.magenta, 0.2),
+    fg = dark_theme and palette.magenta or utils.darken(palette.magenta, 0.2),
     bold = true,
   })
   set_hl("KeywordFunction", { fg = dark_theme and palette.blue or palette.red, bold = false })
-  set_hl("Method", { fg = dark_theme and palette.violet or palette.cyan })
+  set_hl("Method", { fg = dark_theme and palette.magenta or palette.cyan })
 
   set_hl("Type", { fg = palette.yellow })
   set_hl("Typedef", { fg = dark_theme and palette.blue or palette.red })
-  set_hl("TypeBuiltin", { fg = palette.yellow, bold = true })
+  set_hl("TypeBuiltin", { fg = palette.magenta, bold = true })
   set_hl("Class", { fg = dark_theme and palette.yellow or palette.red })
   set_hl("StorageClass", { fg = dark_theme and palette.blue or palette.red })
   set_hl("Structure", { fg = dark_theme and palette.blue or palette.red })
@@ -342,6 +345,7 @@ doom_one.set_colorscheme = function()
     set_hl("@function", { link = "Function" })
     set_hl("@function.builtin", { link = "FunctionBuiltin" })
     set_hl("@function.macro", { link = "Macro" })
+    set_hl("@function.call", { fg = palette.blue, bold = true })
     set_hl("@include", { link = "Include" })
     set_hl("@keyword", { link = "Keyword" })
     set_hl("@keyword.function", { link = "KeywordFunction" })
@@ -356,13 +360,14 @@ doom_one.set_colorscheme = function()
     set_hl("@parameter", { link = "Argument" })
     set_hl("@parameter.reference", { link = "Argument" })
     set_hl("@property", { link = "Property" })
-    set_hl("@punctuation.delimiter", { link = "Delimiter" })
-    set_hl("@punctuation.bracket", { link = "Delimiter" })
+    set_hl("@punctuation.delimiter", { fg = palette.fg })
+    set_hl("@punctuation.bracket", { fg = palette.fg })
     set_hl("@punctuation.special", { link = "Delimiter" })
     set_hl("@repeat", { link = "Repeat" })
     set_hl("@string", { link = "String" })
     set_hl("@string.regex", { link = "StringDelimiter" })
     set_hl("@string.escape", { link = "StringDelimiter" })
+    set_hl("@string.documentation", { link = "SpecialComment" })
     set_hl("@structure", { link = "Structure" })
     set_hl("@tag", { link = "Tag" })
     set_hl("@tag.attribute", { link = "Attribute" })
@@ -373,7 +378,7 @@ doom_one.set_colorscheme = function()
     set_hl("@danger", { link = "ErrorMsg" })
     set_hl("@type", { link = "Type" })
     set_hl("@type.builtin", { link = "TypeBuiltin" })
-    set_hl("@variable", { link = "None" })
+    set_hl("@variable", { link = "Variable" })
     set_hl("@variable.builtin", { link = "VariableBuiltin" })
     set_hl("@query.linter.error", { fg = palette.fg })
     set_hl("@text", { link = "TextNormal" })
@@ -539,7 +544,7 @@ doom_one.set_colorscheme = function()
     set_hl("dashboardHeader", { fg = palette.grey })
     set_hl("dashboardFooter", { link = "dashboardHeader" })
     set_hl("dashboardCenter", { fg = dark_theme and palette.blue or palette.orange })
-    set_hl("dashboardShortcut", { fg = palette.violet })
+    set_hl("dashboardShortcut", { fg = palette.purple })
   end
 
   if config.plugins.startify then
@@ -553,7 +558,7 @@ doom_one.set_colorscheme = function()
 
   if config.plugins.whichkey then
     set_hl("WhichKey", { fg = palette.green })
-    set_hl("WhichKeyGroup", { fg = palette.violet })
+    set_hl("WhichKeyGroup", { fg = palette.purple })
     set_hl("WhichKeyDesc", { fg = palette.blue })
     set_hl("WhichKeySeparator", { link = "Separator" })
     set_hl("WhichKeyFloat", { fg = dark_theme and palette.base2 or palette.base6 })
