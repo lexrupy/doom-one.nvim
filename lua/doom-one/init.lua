@@ -207,7 +207,7 @@ doom_one.set_colorscheme = function()
 
   set_hl("Number", { fg = palette.purple })
   set_hl("Float", { link = "Number" })
-  set_hl("Boolean", { fg = palette.blue, bold = true })
+  set_hl("Boolean", { fg = palette.magenta, bold = false })
   set_hl("Enum", { fg = palette.orange })
 
   set_hl("Character", { fg = palette.violet, bold = true })
