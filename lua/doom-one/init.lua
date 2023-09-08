@@ -36,6 +36,7 @@ local config = {
     whichkey = if_nil(vim.g.doom_one_plugin_whichkey, true),
     indent_blankline = if_nil(vim.g.doom_one_plugin_indent_blankline, true),
     vim_illuminate = if_nil(vim.g.doom_one_plugin_vim_illuminate, true),
+    flash = if_nil(vim.g.doom_one_plugin_flash, true),
     lspsaga = if_nil(vim.g.doom_one_plugin_lspsaga, false),
   },
 }
@@ -563,6 +564,13 @@ doom_one.set_colorscheme = function()
     set_hl("WhichKeySeparator", { link = "Separator" })
     set_hl("WhichKeyFloat", { fg = dark_theme and palette.base2 or palette.base6 })
     set_hl("WhichKeyValue", { fg = palette.grey })
+  end
+
+  if config.plugins.flash then
+    set_hl("FlashBackDrop", { link = "Comment" })
+    set_hl("FlashMatch", { link = "Search" })
+    set_hl("FlashCurrent", { link = "IncSearch" })
+    set_hl("FlashLabel", { bg = utils.darken(palette.red, 0.3), fg = palette.fg, bold = true })
   end
 
   if config.plugins.nvim_tree then
